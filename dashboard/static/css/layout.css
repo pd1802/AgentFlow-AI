@@ -1,0 +1,102 @@
+/* ==========================================
+   BACKGROUND
+========================================== */
+
+body{
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(56,189,248,.10),
+    transparent 35%),
+
+    radial-gradient(circle at top right,
+    rgba(139,92,246,.12),
+    transparent 35%),
+
+    linear-gradient(
+    135deg,
+    var(--bg-primary),
+    var(--bg-secondary));
+}
+
+/* ==========================================
+   PARTICLES
+========================================== */
+
+#particles{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-10;
+
+}
+
+/* ==========================================
+   APP
+========================================== */
+
+.app{
+
+    display:grid;
+
+    grid-template-columns:
+        var(--sidebar-width)
+        1fr;
+
+    min-height:100vh;
+
+}
+
+/* ==========================================
+   MAIN CONTENT
+========================================== */
+
+.content{
+
+    padding:45px;
+
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:40px;
+
+}
+
+header h1{
+
+    font-size:38px;
+
+    font-weight:700;
+
+}
+
+header p{
+
+    margin-top:8px;
+
+    color:var(--text-muted);
+
+}
+
+/* ==========================================
+   SECTION
+========================================== */
+
+section{
+
+    margin-bottom:35px;
+
+}

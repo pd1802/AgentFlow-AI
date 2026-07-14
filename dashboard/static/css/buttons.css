@@ -1,0 +1,87 @@
+/* ==========================================
+   BUTTONS
+========================================== */
+
+button{
+
+    transition:all var(--transition-normal);
+
+}
+
+.search-card{
+
+    display:flex;
+
+    gap:18px;
+
+    padding:22px;
+
+}
+
+.search-card input{
+
+    flex:1;
+
+    background:rgba(8,15,25,.75);
+
+    color:white;
+
+    padding:18px 22px;
+
+    border-radius:16px;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    font-size:16px;
+
+    transition:all .3s;
+
+}
+
+.search-card input:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 20px rgba(56,189,248,.25);
+
+}
+
+.search-card button{
+
+    padding:18px 34px;
+
+    border-radius:16px;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    box-shadow:
+
+        0 10px 25px rgba(56,189,248,.25);
+
+}
+
+.search-card button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+        0 20px 40px rgba(56,189,248,.35);
+
+}
+
+.search-card button:active{
+
+    transform:scale(.98);
+
+}

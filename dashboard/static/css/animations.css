@@ -1,0 +1,92 @@
+/* ==========================================
+   BACKGROUND BLOOM
+========================================== */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(circle at 15% 20%,
+    rgba(56,189,248,.06),
+    transparent 35%),
+
+    radial-gradient(circle at 85% 10%,
+    rgba(139,92,246,.05),
+    transparent 35%),
+
+    radial-gradient(circle at 50% 80%,
+    rgba(6,182,212,.05),
+    transparent 40%);
+
+    pointer-events:none;
+
+    z-index:-20;
+
+}
+
+/* Ripple */
+
+.button{
+    position:relative;
+    overflow:hidden;
+}
+
+.ripple{
+    position:absolute;
+    border-radius:50%;
+    transform:scale(0);
+    background:rgba(255,255,255,.35);
+    animation:ripple .6s linear;
+}
+
+@keyframes ripple{
+    to{
+        transform:scale(4);
+        opacity:0;
+    }
+}
+
+/* Toast */
+
+.toast{
+    position:fixed;
+    right:30px;
+    bottom:30px;
+    background:#111827;
+    color:white;
+    padding:16px 22px;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 10px 35px rgba(0,0,0,.35);
+    transform:translateY(80px);
+    opacity:0;
+    transition:.4s;
+    z-index:99999;
+}
+
+.toast.show{
+    transform:translateY(0);
+    opacity:1;
+}
+
+/* Particle Canvas */
+
+#particles{
+    position:fixed;
+    inset:0;
+    z-index:-5;
+    overflow:hidden;
+    pointer-events:none;
+}
+
+#particleCanvas{
+    width:100%;
+    height:100%;
+    display:block;
+}

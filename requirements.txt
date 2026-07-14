@@ -1,0 +1,113 @@
+# ==============================
+# LLM Providers
+# ==============================
+langchain
+langchain-core
+langchain-community
+langchain-mistralai
+
+# ==============================
+# LangGraph (Multi-Agent)
+# ==============================
+langgraph
+langgraph-checkpoint
+
+# ==============================
+# Search & Web
+# ==============================
+tavily-python
+beautifulsoup4
+requests
+httpx
+lxml
+html5lib
+
+# ==============================
+# Document Loaders
+# ==============================
+pypdf
+pymupdf
+python-docx
+unstructured
+markdown
+
+# ==============================
+# Vector Databases (Optional)
+# ==============================
+chromadb
+faiss-cpu
+
+# ==============================
+# Embeddings
+# ==============================
+sentence-transformers
+langchain-huggingface
+
+# ==============================
+# Tokenization
+# ==============================
+tiktoken
+
+# ==============================
+# Environment Variables
+# ==============================
+python-dotenv
+
+# ==============================
+# Data Validation
+# ==============================
+pydantic
+
+# ==============================
+# Utilities
+# ==============================
+numpy
+pandas
+tqdm
+tenacity
+loguru
+
+# ==============================
+# Async Support
+# ==============================
+aiofiles
+
+# ==============================
+# API / Backend
+# ==============================
+fastapi
+uvicorn
+
+# ==============================
+# Parsing
+# ==============================
+python-multipart
+
+# ==============================
+# Optional Notebook Support
+# ==============================
+jupyter
+ipykernel
+
+# ==============================
+# Monitoring & Tracing
+# ==============================
+langsmith
+
+# ==============================
+# Testing
+# ==============================
+pytest
+
+# ==============================
+# Development
+# ==============================
+watchdog
+ragas
+datasets
+pytesseract
+Pillow
+huggingface-hub
+transformers
+accelerate
+torch

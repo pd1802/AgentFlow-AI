@@ -1,0 +1,573 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AgentFlow AI</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/6c6d5cb0f4.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+    <div id="particles"></div>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+
+        <aside class="sidebar">
+
+    <!-- Logo -->
+    <div class="logo">
+
+        <div class="logo-circle"></div>
+
+        <h2>AgentFlow AI</h2>
+
+    </div>
+
+    <!-- Scrollable Area -->
+    <div class="sidebar-content">
+
+        <!-- Navigation -->
+        <nav>
+
+            <a href="#" class="active">
+                <i class="fas fa-chart-line"></i>
+                Dashboard
+            </a>
+
+            <a href="#">
+                <i class="fas fa-robot"></i>
+                Agents
+            </a>
+
+            <a href="#">
+                <i class="fas fa-terminal"></i>
+                Console
+            </a>
+
+            <a href="#">
+                <i class="fas fa-file-lines"></i>
+                Reports
+            </a>
+
+            <a href="#">
+                <i class="fas fa-gear"></i>
+                Settings
+            </a>
+
+        </nav>
+
+        <!-- History -->
+        <div class="history-panel glass">
+
+            <div class="history-header">
+
+                <span>🕘</span>
+
+                <h3>Recent Research</h3>
+
+            </div>
+
+            <div id="historyList">
+
+                <div class="history-loading">
+
+                    Loading...
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="sidebar-footer">
+
+        <div class="version">
+
+            AgentFlow AI<br>
+
+            v1.0.0
+
+        </div>
+
+    </div>
+
+</aside>
+
+        <!-- Main Content -->
+
+        <main class="content">
+
+            <!-- Header -->
+
+            <header>
+
+                <div>
+
+                    <h1>Multi-Agent Research Dashboard</h1>
+
+                    <p>Monitor every AI agent in real time.</p>
+
+                </div>
+
+                <div class="connection-status">
+
+                    <span class="pulse"></span>
+
+                    Connected
+
+                </div>
+
+            </header>
+
+            <!-- Search Card -->
+
+            <section class="search-card glass">
+
+                <input type="text" id="topic" placeholder="Enter research topic...">
+
+                <button id="startBtn">
+
+                    🚀 Start Research
+
+                </button>
+
+            </section>
+
+            <!-- Stats -->
+<!-- =====================================================
+     METRICS
+===================================================== -->
+
+<section class="metrics-grid">
+
+    <div class="metric-card glass">
+
+        <div class="metric-icon">
+
+            ⚡
+
+        </div>
+
+        <div>
+
+            <span class="metric-title">
+
+                Runtime
+
+            </span>
+
+            <h2 id="runtime">
+
+                00:00
+
+            </h2>
+
+        </div>
+
+    </div>
+
+    <div class="metric-card glass">
+
+        <div class="metric-icon">
+
+            🤖
+
+        </div>
+
+        <div>
+
+            <span class="metric-title">
+
+                Current Agent
+
+            </span>
+
+            <h2 id="currentAgent">
+
+                Idle
+
+            </h2>
+
+        </div>
+
+    </div>
+
+    <div class="metric-card glass">
+
+        <div class="metric-icon">
+
+            📈
+
+        </div>
+
+        <div>
+
+            <span class="metric-title">
+
+                Progress
+
+            </span>
+
+            <h2>
+
+                <span id="progress">
+
+                    0
+
+                </span>%
+
+            </h2>
+
+        </div>
+
+        <div class="progress-bar">
+
+            <div
+                class="progress-fill"
+                id="progressFill">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="metric-card glass">
+
+        <div class="metric-icon">
+
+            🌐
+
+        </div>
+
+        <div>
+
+            <span class="metric-title">
+
+                URLs
+
+            </span>
+
+            <h2 id="urlCount">
+
+                0
+
+            </h2>
+
+        </div>
+
+    </div>
+
+</section>
+
+            <!-- Agent Cards -->
+<!-- ======================================================
+     AI PIPELINE
+====================================================== -->
+
+<section class="pipeline-section">
+
+    <div class="section-header">
+
+        <h2>AI Execution Pipeline</h2>
+
+        <span class="pipeline-status">
+
+            Waiting...
+
+        </span>
+
+    </div>
+
+    <div class="pipeline">
+
+        <!-- Search -->
+
+        <div class="pipeline-node active" id="searchAgent">
+
+            <div class="node-circle">
+
+                🔍
+
+            </div>
+
+            <h2>Search</h2>
+
+            <span class="node-state idle">
+
+                Idle
+
+            </span>
+
+        </div>
+        <div class="pipeline-line" id="line-search">
+            <div class="flow"></div>
+        </div>
+
+        <!-- Content -->
+
+        <div class="pipeline-node" id="contentAgent">
+
+            <div class="node-circle">
+
+                📄
+
+            </div>
+
+            <h2>Content</h2>
+
+            <span class="node-state idle">
+
+                Idle
+
+            </span>
+
+        </div>
+
+        <div class="pipeline-line" id="line-content">
+
+    <div class="flow"></div>
+
+</div>
+
+        <!-- Writer -->
+
+        <div class="pipeline-node" id="writerAgent">
+
+            <div class="node-circle">
+
+                ✍️
+
+            </div>
+
+            <h2>Writer</h2>
+
+            <span class="node-state idle">
+
+                Idle
+
+            </span>
+
+        </div>
+
+        <div class="pipeline-line" id="line-writer">
+
+    <div class="flow"></div>
+
+</div>
+
+        <!-- Critic -->
+
+        <div class="pipeline-node" id="criticAgent">
+
+            <div class="node-circle">
+
+                🧠
+
+            </div>
+
+            <h2>Critic</h2>
+
+            <span class="node-state idle">
+
+                Idle
+
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+            <!-- Console -->
+<!-- ==========================================
+     LIVE CONSOLE
+========================================== -->
+
+<section class="console-section">
+
+    <div class="console-window glass">
+
+        <div class="console-header">
+
+            <div class="window-buttons">
+
+                <span class="red"></span>
+                <span class="yellow"></span>
+                <span class="green"></span>
+
+            </div>
+
+            <div class="console-title">
+
+                AgentFlow Terminal
+
+            </div>
+
+            <div class="console-actions">
+
+                <button id="clearConsole">
+
+                    Clear
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="console-body" id="console">
+
+            <div class="console-line info">
+
+                <span class="time">[SYSTEM]</span>
+
+                <span class="message">
+
+                    Waiting for research task...
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+            <!-- Results -->
+
+            <section class="results-grid">
+
+                <div class="glass result-card">
+
+                    <h2>Search Results</h2>
+
+                    <div id="searchResults">
+
+                        Waiting...
+
+                    </div>
+
+                </div>
+
+                <div class="glass result-card">
+
+                    <h2>Research Summary</h2>
+
+                    <div id="summary">
+
+                        Waiting...
+
+                    </div>
+
+                </div>
+
+               <div class="glass result-card full">
+
+    <div class="report-header">
+
+        <h2>Final Report</h2>
+
+        <div class="report-actions">
+
+            <button id="copyReportBtn">
+
+                📋 Copy
+
+            </button>
+
+            <button id="downloadMdBtn">
+
+                📝 Markdown
+
+            </button>
+
+            <button id="downloadPdfBtn">
+
+                📄 PDF
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="report-meta">
+
+    <span id="reportTopic">Topic: -</span>
+
+    <span id="reportDate">Generated: -</span>
+
+</div>
+
+    <div id="report">
+
+        Waiting...
+
+    </div>
+
+</div>
+
+                <div class="glass result-card full">
+
+                    <h2>Critique</h2>
+
+                    <div id="critique">
+
+                        Waiting...
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="{% static 'js/dashboard.js' %}"></script>
+<script src="{% static 'js/app.js' %}"></script>
+<script src="{% static 'js/export.js' %}"></script>
+<script src="{% static 'js/particles.js' %}"></script> 
+<script src="{% static 'js/animations.js' %}"></script> 
+<script src="{% static 'js/websocket.js' %}"></script> 
+</body>
+
+</html>

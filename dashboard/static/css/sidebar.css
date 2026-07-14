@@ -1,0 +1,274 @@
+/* ==========================================
+   SIDEBAR
+========================================== */
+
+.sidebar{
+
+    position:sticky;
+
+    top:0;
+
+    width:var(--sidebar-width);
+
+    height:100vh;
+
+    padding:32px 24px;
+
+    background:rgba(8,12,22,.82);
+
+    backdrop-filter:blur(25px);
+
+    border-right:1px solid var(--border-color);
+
+    display:flex;
+
+    flex-direction:column;
+
+    overflow:hidden;
+
+}
+
+/* ==========================================
+   SIDEBAR CONTENT
+========================================== */
+
+.sidebar-content{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+    padding-right:6px;
+
+    margin-top:10px;
+
+}
+
+/* Animated Glow */
+
+.sidebar::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    background:radial-gradient(
+        circle,
+        rgba(56,189,248,.12),
+        transparent 70%
+    );
+
+    top:-180px;
+    left:-180px;
+
+    pointer-events:none;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    margin-bottom:50px;
+
+}
+
+.logo-circle{
+
+    width:18px;
+    height:18px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    box-shadow:
+        var(--glow-blue),
+        var(--glow-purple);
+
+    animation:logoPulse 3s infinite;
+
+}
+
+.logo h2{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+}
+
+/* Navigation */
+
+.sidebar nav{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+.sidebar nav a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:16px 18px;
+
+    border-radius:16px;
+
+    color:var(--text-secondary);
+
+    transition:all var(--transition-normal);
+
+    position:relative;
+
+}
+
+.sidebar nav a i{
+
+    width:22px;
+
+    text-align:center;
+
+    font-size:18px;
+
+}
+
+.sidebar nav a:hover{
+
+    background:rgba(56,189,248,.10);
+
+    color:white;
+
+    transform:translateX(8px);
+
+}
+
+.sidebar nav a.active{
+
+    background:linear-gradient(
+        90deg,
+        rgba(56,189,248,.18),
+        rgba(139,92,246,.18)
+    );
+
+    color:white;
+
+    box-shadow:0 0 25px rgba(56,189,248,.15);
+
+}
+
+.sidebar nav a.active::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-24px;
+
+    width:4px;
+    height:70%;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        var(--primary),
+        var(--secondary)
+    );
+
+}
+
+/* Footer */
+.sidebar-footer{
+
+    padding-top:20px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+
+.sidebar-footer .version{
+
+    color:var(--text-muted);
+
+    font-size:13px;
+
+    text-align:center;
+
+}
+
+/* Logo Animation */
+
+@keyframes logoPulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.2);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ==========================================
+   CUSTOM SCROLLBAR
+========================================== */
+
+.sidebar-content::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.sidebar-content::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+.sidebar-content::-webkit-scrollbar-thumb{
+
+    background:rgba(56,189,248,.35);
+
+    border-radius:20px;
+
+}
+
+.sidebar-content::-webkit-scrollbar-thumb:hover{
+
+    background:rgba(56,189,248,.7);
+
+}

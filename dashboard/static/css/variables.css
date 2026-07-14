@@ -1,0 +1,132 @@
+/* ==========================================
+   AGENTFLOW AI DESIGN SYSTEM
+   ========================================== */
+
+:root {
+
+    /* ===============================
+       COLORS
+    =============================== */
+
+    --bg-primary: #050816;
+    --bg-secondary: #0B1120;
+    --bg-tertiary: #111827;
+    --bg-card: rgba(15, 23, 42, 0.78);
+    --bg-card-hover: rgba(30, 41, 59, 0.88);
+
+    --sidebar-bg: rgba(7, 10, 20, 0.82);
+
+    --border-color: rgba(255,255,255,.08);
+
+    /* ===============================
+       TEXT
+    =============================== */
+
+    --text-primary: #F8FAFC;
+    --text-secondary: #CBD5E1;
+    --text-muted: #94A3B8;
+
+    /* ===============================
+       BRAND COLORS
+    =============================== */
+
+    --primary: #38BDF8;
+    --primary-dark: #0284C7;
+
+    --secondary: #8B5CF6;
+    --secondary-dark: #7C3AED;
+
+    --accent: #06B6D4;
+
+    /* ===============================
+       STATUS COLORS
+    =============================== */
+
+    --success: #22C55E;
+    --warning: #F59E0B;
+    --danger: #EF4444;
+    --info: #3B82F6;
+
+    /* ===============================
+       SHADOWS
+    =============================== */
+
+    --shadow-sm:
+        0 5px 12px rgba(0,0,0,.18);
+
+    --shadow-md:
+        0 10px 25px rgba(0,0,0,.25);
+
+    --shadow-lg:
+        0 20px 45px rgba(0,0,0,.40);
+
+    --glow-blue:
+        0 0 20px rgba(56,189,248,.35);
+
+    --glow-purple:
+        0 0 20px rgba(139,92,246,.35);
+
+    /* ===============================
+       GLASS
+    =============================== */
+
+    --glass-bg:
+        rgba(15,23,42,.72);
+
+    --glass-border:
+        rgba(255,255,255,.08);
+
+    --glass-blur:
+        blur(18px);
+
+    /* ===============================
+       BORDER RADIUS
+    =============================== */
+
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 22px;
+    --radius-xl: 30px;
+    --radius-round: 999px;
+
+    /* ===============================
+       SPACING
+    =============================== */
+
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+
+    /* ===============================
+       TRANSITIONS
+    =============================== */
+
+    --transition-fast: .2s ease;
+    --transition-normal: .35s ease;
+    --transition-slow: .5s ease;
+
+    /* ===============================
+       SIDEBAR
+    =============================== */
+
+    --sidebar-width: 280px;
+
+    /* ===============================
+       HEADER
+    =============================== */
+
+    --header-height: 80px;
+
+    /* ===============================
+       Z INDEX
+    =============================== */
+
+    --z-sidebar: 100;
+    --z-header: 200;
+    --z-modal: 900;
+    --z-toast: 9999;
+
+}
